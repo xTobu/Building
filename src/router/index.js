@@ -33,7 +33,6 @@ export const constantRouterMap = [
     path: '',
     component: Layout,
     redirect: '/dashboard',
-    name: 'Dashboard',
     children: [
       {
         path: 'dashboard',
@@ -43,32 +42,9 @@ export const constantRouterMap = [
       }
     ]
   },
-  // {
-  //   path: '/data',
-  //   redirect: '/data/index',
-  //   component: Layout,
-  //   name: 'data',
-  //   meta: { title: '資料', icon: 'example' },
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       name: 'index',
-  //       component: () => import('@/views/data/index'),
-  //       meta: { title: '資料總表', icon: 'table' }
-  //     },
-  //     {
-  //       path: 'notification',
-  //       name: 'notification',
-  //       component: () => import('@/views/data/notification'),
-  //       meta: { title: '活動通知', icon: 'international' }
-  //     }
-  //   ]
-  // },
   {
     path: '',
     component: Layout,
-    redirect: '/data',
-    name: 'default',
     hidden: true,
     children: [
       {
@@ -82,8 +58,6 @@ export const constantRouterMap = [
   {
     path: '',
     component: Layout,
-    redirect: '/data',
-    name: 'data',
     hidden: true,
     children: [
       {
@@ -94,31 +68,37 @@ export const constantRouterMap = [
       }
     ]
   },
+
   {
     path: '',
     component: Layout,
-    redirect: '/setting',
-    name: 'setting',
     children: [
       {
         path: 'setting',
-        name: 'setting',
         component: () => import('@/views/setting/index'),
-        meta: { title: 'Setting', icon: 'international' }
+        name: 'setting',
+        meta: {
+          title: 'setting',
+          icon: 'lock',
+          noCache: true
+        }
       }
     ]
   },
+
   {
     path: '',
     component: Layout,
-    redirect: '/plan',
-    name: 'plan',
     children: [
       {
         path: 'plan',
-        name: 'plan',
         component: () => import('@/views/plan/index'),
-        meta: { title: 'Plan', icon: 'international' }
+        name: 'plan',
+        meta: {
+          title: 'plan',
+          icon: 'lock',
+          noCache: true
+        }
       }
     ]
   },
@@ -135,14 +115,9 @@ export const constantRouterMap = [
         component: () => import('@/views/calculator/rm'),
         meta: { title: 'Rep Max', icon: 'table' }
       }
-      // ,{
-      //   path: 'notification',
-      //   name: 'notification',
-      //   component: () => import('@/views/data/notification'),
-      //   meta: { title: '活動通知', icon: 'international' }
-      // }
     ]
   },
+
   { path: '*', redirect: '/404', hidden: true }
 ]
 
